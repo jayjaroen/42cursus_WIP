@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaroens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 14:02:24 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/02 13:20:25 by jjaroens         ###   ########.fr       */
+/*   Created: 2023/09/02 15:40:46 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/09/02 15:55:08 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h> //include size_t
 #include <stdio.h>
+#include <string.h>
 
-size_t	ft_strlen(const char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	unsigned char *str;
+	char	word;
 
-	i = 0;
-	while (*str)
-	{
-		str++;
-		i++;
-	}
-	return (i);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	printf("the result of strlen: %lu\n", strlen("hithere"));
-	printf("the result of my function: %lu\n", ft_strlen("hithere"));
-}*/
+	char word[] = "Hello world";
+	char target = 'w';
+	char *result;
+
+	result = strchr(word,target);
+	printf("%c\n", *result);
+}

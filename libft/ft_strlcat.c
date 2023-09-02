@@ -1,34 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaroens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 14:02:24 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/02 13:20:25 by jjaroens         ###   ########.fr       */
+/*   Created: 2023/09/02 13:35:23 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/09/02 14:44:51 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h> //include size_t
+#include <string.h>
 #include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t	len;
+	size_t	srcsize;
 
+	srcsize = ft_strlen(src);
+	len = ft_strlen(dst);
 	i = 0;
-	while (*str)
+	if (!(dst) && !dstsize)
+		return (srcsize);
+	while (*src && (len + 1 < dstsize))
 	{
-		str++;
+		dst[len] = src[i];
+		len++;
 		i++;
 	}
-	return (i);
+	dst[len] = '\0';
+	return (ft_strlen(dst));
 }
 
 /*int	main(void)
 {
-	printf("the result of strlen: %lu\n", strlen("hithere"));
-	printf("the result of my function: %lu\n", ft_strlen("hithere"));
+	char a[50];
+	char b[] = "This is";
+	char c[] = "cat";
+	size_t len;
+
+	strcpy(a, b);
+	len = strlcat(a, c, sizeof(a));
+	printf("%s\n", a);
+	printf("%zu\n", len);
 }*/

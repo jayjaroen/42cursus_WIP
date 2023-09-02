@@ -1,34 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaroens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 14:02:24 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/02 13:20:25 by jjaroens         ###   ########.fr       */
+/*   Created: 2023/09/02 11:19:43 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/09/02 14:46:19 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h> //include size_t
+#include <string.h>
 #include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-
+	size_t	srcsize;
+	
+	if (!(src) && !(dst))
+		return (0);
 	i = 0;
-	while (*str)
+	srcsize = ft_strlen(src);
+	if (!(dst))
+		return (srcsize);
+	while (*src && (i < dstsize - 1))
 	{
-		str++;
+		dst[i] = src[i];
 		i++;
 	}
-	return (i);
+	dst[i] = '\0';
+	return (srcsize);
 }
 
 /*int	main(void)
 {
-	printf("the result of strlen: %lu\n", strlen("hithere"));
-	printf("the result of my function: %lu\n", ft_strlen("hithere"));
+	char word[50];
+	char a[] = "hello";
+	char b[] = "World";
+	size_t len;
+
+	strcpy(word, a);
+	printf("strcpy funtion:%s\n", word);
+	len = strlcpy(word, b, sizeof(word));
+	printf("strlcpy function: %zu\n", len);
 }*/
