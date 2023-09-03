@@ -6,7 +6,7 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 21:53:35 by jay               #+#    #+#             */
-/*   Updated: 2023/09/03 22:26:52 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/03 22:38:15 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,26 @@ char  *ft_strrchr(const char *s, int c)
 {
   unsigned char w;
   char  *str;
-  char *tmp;
-  int i;
+  size_t i;
 
-  i = 0;
+  i = ft_strlen(s) - 1;
   w = (unsigned char)c;
   str = (char*)s;
-  tmp = NULL;
-  while (str[i] != '\0')
+  while (i)
   {
     if (str[i] == w)
-    {
-      tmp = &str[i];
-    }
-    i++;
+      return(&str[i]);
+    i--;
   }
-  return (tmp);
+  return (NULL);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char word[] = "Hello worlddd4";
-	char target = 'p';
+	char target = '4';
   char word2[] = "Hello worldd4";
-	char target2 = 'p';
+	char target2 = '4';
 	char *result;
   char *result2;
 
@@ -56,4 +52,4 @@ char  *ft_strrchr(const char *s, int c)
   if (result2 == NULL)
     printf("not found\n");
   return(0);
-}*/
+}
