@@ -6,7 +6,7 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 21:53:35 by jay               #+#    #+#             */
-/*   Updated: 2023/09/03 22:38:15 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/03 22:39:05 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char  *ft_strrchr(const char *s, int c)
   return (NULL);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char word[] = "Hello worlddd4";
 	char target = '4';
@@ -52,4 +52,4 @@ int	main(void)
   if (result2 == NULL)
     printf("not found\n");
   return(0);
-}
+}*/
