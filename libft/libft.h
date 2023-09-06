@@ -6,7 +6,7 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 10:15:18 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/04 22:11:05 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/05 22:11:20 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,6 @@ int	ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char  *ft_strrchr(const char *s, int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);//sep 4
+void  *ft_memchr(const void *s, int c, size_t n);//sep 5
+
 #endif
