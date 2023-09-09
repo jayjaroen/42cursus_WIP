@@ -6,7 +6,7 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:30:42 by jay               #+#    #+#             */
-/*   Updated: 2023/09/09 10:57:15 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/09 11:14:01 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int ft_atoi(const char *str)
   }
   return (sign*num);
 }
-
 // int main(void)
 // {
 //   printf("the return of atoi function is: %d\n", atoi("   pod-+-+--34dfdf2"));
