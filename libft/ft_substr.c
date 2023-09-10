@@ -6,7 +6,7 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 06:32:04 by jay               #+#    #+#             */
-/*   Updated: 2023/09/10 07:00:11 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/10 07:01:09 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char  *ft_substr(char const *s, unsigned int start, size_t len)
 
   i = ft_strlen(&s[start]) - len;
   sub = (char *)malloc(sizeof(char)*(i) + 1);
+  if (sub == NULL)
+    return (NULL);
   cur = 0;
   while (cur < len)
   {
