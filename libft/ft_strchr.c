@@ -6,7 +6,7 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 15:40:46 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/03 21:47:35 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/15 21:26:48 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*ft_strchr(const char *s, int c)
   }
   return (NULL);
 }
-
 /*int	main(void)
 {
 	char word[] = "Hello world";
