@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 14:02:24 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/02 13:20:25 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:18:22 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h> //include size_t
-#include <stdio.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -26,7 +25,6 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
-
 /*int	main(void)
 {
 	printf("the result of strlen: %lu\n", strlen("hithere"));

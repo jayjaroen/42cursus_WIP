@@ -6,7 +6,7 @@
 /*   By: jjaroens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 14:32:30 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/08/27 15:22:30 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:26:14 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 void	*ft_memset(void *ptr, int c, size_t len)
 {
-	//memset() return its first argument 
-	size_t	i;
+	size_t			i;
 	unsigned char	*p;
 
 	i = 0;
@@ -30,8 +29,7 @@ void	*ft_memset(void *ptr, int c, size_t len)
 	}
 	return (ptr);
 }
-
-int	main(void)
+/*int	main(void)
 {
 	char word[10];
 	char string[5];
@@ -44,5 +42,4 @@ int	main(void)
 	
 	printf("the result of memset:  %s\n", memset(string, 'Y', 1));
 	printf("the result of my function: %s\n", ft_memset(string, 'Y', 1));
-
-}
+}*/

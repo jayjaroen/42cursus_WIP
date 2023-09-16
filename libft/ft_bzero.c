@@ -6,29 +6,26 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 21:15:05 by jay               #+#    #+#             */
-/*   Updated: 2023/08/27 22:11:59 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/16 16:42:31 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-void  ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-  size_t  i;
-  unsigned char *ptr;
+	size_t			i;
+	unsigned char	*ptr;
 
-  i = 0;
-  ptr = (unsigned char*)s;
-  while (i < n)
-  {
-    *ptr = 0;
-    ptr++;
-    i++;
-  }
+	i = 0;
+	ptr = (unsigned char *)s;
+	while (i < n)
+	{
+		*ptr = 0;
+		ptr++;
+		i++;
+	}
 }
-
 /*int main(void)
 {
   char word[12];

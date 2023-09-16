@@ -6,32 +6,30 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 22:13:14 by jay               #+#    #+#             */
-/*   Updated: 2023/08/28 22:48:59 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/16 16:59:38 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-void  *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-  unsigned char *d; // only positive value 0 - 255
-  unsigned char *s; // why can't copy directly, but need to create a variable first?
-  size_t i;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
 
-  d = (void *)dst;
-  s = (void *)src;
-  i = 0;
-
-  while (i < n)
-  {
-    d[i] = s[i];
-    i++;
-  }
-  return (dst);
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
 }
-
 // int main(void)
 // {
 //   char source[] = "hello world";

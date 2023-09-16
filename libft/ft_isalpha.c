@@ -6,22 +6,19 @@
 /*   By: jjaroens <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 10:39:57 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/08/27 11:25:42 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/09/16 15:41:57 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
-	if ((c >= 'A' && c <= 'Z')||(c <= 'a' && c >= 'z')) 
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	else
-		return (0);	
+		return (0);
 }
-
 /*int	main(void)
 {
 	printf("the result of isalpha: %d\n",isalpha('A'));
