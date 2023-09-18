@@ -3,47 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 13:35:23 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/16 14:37:29 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/09/18 22:53:51 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
-
+// Behavior: strlcat append string src to the end of dest.
+// Strlcat append at most dstsize - strlen(dst) - 1
+// Parameters: dst (src to be appended), src,
+//             dstsize (maximum size of destination buffer + null terminator)
+//             that can be store in dst
+// Return: the initial length of dst + the length of src.
+// strlcat ensures that the concatenated result will fit within
+// the destination buffer without causing a buffer overflow.
+// If the truncation occured, it returned the destination string
+// plus the number that would have been copied, but not more than size - 1
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	len;
-	size_t	srcsize;
+	size_t	j;
+	size_t	dst_len;
+	size_t	src_len;
 
-	srcsize = ft_strlen(src);
-	len = ft_strlen(dst);
-	i = 0;
-	if (!(dst) && !dstsize)
-		return (srcsize);
-	while (*src && (len + 1 < dstsize))
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	if (dstsize <= dst_len)
+		return (dstsize + src_len);
+	i = dst_len;
+	j = 0;
+	while (src[j] != '\0' && i + 1 < dstsize)
 	{
-		dst[len] = src[i];
-		len++;
-		i++;
+		dst[i++] = src[j++];
 	}
-	dst[len] = '\0';
-	return (ft_strlen(dst));
+	dst[i] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[j]));
 }
-
-/*int	main(void)
-{
-	char a[50];
-	char b[] = "This is";
-	char c[] = "cat";
-	size_t len;
-
-	strcpy(a, b);
-	len = strlcat(a, c, sizeof(a));
-	printf("%s\n", a);
-	printf("%zu\n", len);
-}*/

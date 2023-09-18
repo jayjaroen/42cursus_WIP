@@ -3,29 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 11:19:43 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/16 12:16:23 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/09/16 22:49:56 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
-
+//strlcpy copies the dstsize - 1 from the source to the destination
+//strlcpy return value of the value of the length of string it tries to create
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	srcsize;
-	
-	if (!(src) && !(dst))
-		return (0);
-	i = 0;
+
 	srcsize = ft_strlen(src);
-	if (!(dst))
+	if (!(src) || !(dst) || !dstsize)
 		return (srcsize);
-	while (*src && (i < dstsize - 1))
+	i = 0;
+	while (src[i] && (i < dstsize - 1))
 	{
 		dst[i] = src[i];
 		i++;
@@ -35,13 +32,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 }
 /*int	main(void)
 {
-	char word[50];
-	char a[] = "hello";
-	char b[] = "World";
-	size_t len;
+	char word[10];
+	char src[] = "hellohellohello";
+  char word1[10];
+	char src1[] = "hellohellohello";
 
-	strcpy(word, a);
-	printf("strcpy funtion:%s\n", word);
-	len = strlcpy(word, b, sizeof(word));
-	printf("strlcpy function: %zu\n", len);
+	printf("strlcpy funtion:%zu\n", strlcpy(word, src, 0));
+  printf("strclpy function:%s\n", word);
+	printf("strlcpy funtion:%zu\n", ft_strlcpy(word1, src1, 0));
+  printf("strclpy function:%s\n", word1);
 }*/
