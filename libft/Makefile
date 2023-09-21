@@ -34,6 +34,7 @@ SRCS += ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
 		ft_split.c \
+		ft_itoa.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
