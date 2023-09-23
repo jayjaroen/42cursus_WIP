@@ -6,7 +6,7 @@
 #    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 14:17:00 by jjaroens          #+#    #+#              #
-#    Updated: 2023/09/16 15:28:47 by jjaroens         ###   ########.fr        #
+#    Updated: 2023/09/23 13:39:40 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,10 @@ SRCS += ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
 
 OBJECTS = $(SRCS:.c=.o)
 

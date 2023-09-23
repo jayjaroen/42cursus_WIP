@@ -6,38 +6,37 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 21:53:26 by jay               #+#    #+#             */
-/*   Updated: 2023/09/07 21:52:38 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/23 15:40:32 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
-
+/*
+Description: The memcmp() function compares byte string s1 against byte 
+		string s2.Both strings are assumed to be n bytes long.
+Return:	The memcmp() function returns zero if the two strings are identical, 
+	otherwise returns the difference between the first two differing bytes
+     (treated as unsigned char values, so that `\200' is greater than `\0',
+     for example).  Zero-length strings are always identical.  This behavior
+     is not required by C and portable code should only depend on the sign of
+     the returned value.
+*/
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-  const unsigned char  *a;
-  const unsigned char  *b;
-  size_t  i;
-
-  a = (const unsigned char *)s1;
-  b = (const unsigned char *)s2;
-  i = 0;
-  while (i < n)
-  {
-    if (a[i] != b[i])
-      return (a[i] - b[i]);
-    i++;
-  }
-  return (a[i] - b[i]);
+	unsigned char  *a;
+	unsigned char  *b;
+	size_t  i;
+	
+	a = (unsigned char *)s1;
+	b = (unsigned char *)s2;
+	i = 0;
+	if ( n == 0)
+		return (0);
+	while (i < n)
+	{
+		if (a[i] != b[i])
+			return (a[i] - b[i]);
+		i++;
+	}
+	return (0);
 }
-
-// int main(void)
-// {
-//   char a[] = "hello";
-//   char b[] = "world";
-//   int result = memcmp(a, b , 5);
-//   int result1 = ft_memcmp(a, b, 5);
-//   printf("the result of memcmp: %d\n", result);
-//   printf("the result of my function: %d\n", result1);
-// }
