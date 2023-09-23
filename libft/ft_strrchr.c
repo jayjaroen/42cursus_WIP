@@ -14,18 +14,20 @@
 // Description: The strrchr() function is identical to strchr(), 
 //except it locates the last occurrence of c.
 // Return value: The functions strchr() and strrchr() return a pointer
-// to the located character, or NULL if the character does not appear in the string.
+// to the located character, or NULL if the character does not appear
+// in the string.
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	
+	size_t		i;
+
 	i = ft_strlen(s);
-	while (i != 0 && *(s + i) != c)
+	if ((char)c == '\0')
+		return ((char *)s + i);
+	while (i)
+	{
 		i--;
-	if (c == *(s + i))
-		return ((char *)(s + i));
-	else if ( c == *s)
-		return ((char *)s);
-	else
-		return (NULL);
+		if (*(s + i) == (char)c)
+			return ((char *)s + i);
+	}
+	return (NULL);
 }
