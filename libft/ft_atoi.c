@@ -6,40 +6,31 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:30:42 by jay               #+#    #+#             */
-/*   Updated: 2023/09/09 11:14:01 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/24 13:35:29 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-  char *ptr;
-  int num;
-  int sign;
+	int	num;
+	int	sign;
 
-  sign = 1;
-  ptr = (char *)str;
-  while ((*ptr < 48 && *ptr > 57) || (*ptr != '-' || *ptr != '+'))
-    return (0);
-  if (*ptr == '-')
-    sign = -1;
-  while ((*ptr >= 48 && *ptr <= 57))
-  {
-    ptr++;
-    num = *ptr - 48;
-    num *= 10;
-  }
-  return (sign*num);
+	sign = 1;
+	num = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		num = (num * 10) + (*str - 48);
+		str++;
+	}
+	return (sign * num);
 }
-// int main(void)
-// {
-//   printf("the return of atoi function is: %d\n", atoi("   pod-+-+--34dfdf2"));
-//   printf("the return of atoi function is: %d\n", atoi("-+34dfdf2"));
-//   printf("the return of my function is: %d\n", atoi("   pod-+-+--34dfdf2"));
-//   printf("the return of my function is: %d\n", atoi("-+34dfdf2"));
-//   printf("the return of atoi function is: %d\n", atoi("090pod-+-+--34dfdf2"));
-//   printf("the return of my function is: %d\n", atoi("090pod-+-+--34dfdf2"));
-// }
