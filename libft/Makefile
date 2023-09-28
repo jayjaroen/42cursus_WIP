@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
+#    By: jay <jay@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 14:17:00 by jjaroens          #+#    #+#              #
-#    Updated: 2023/09/23 13:39:40 by jjaroens         ###   ########.fr        #
+#    Updated: 2023/09/28 21:55:57 by jay              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,11 @@ SRCS += ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 
+BONUS_SRCS = ft_lstnew.c \
+
 OBJECTS = $(SRCS:.c=.o)
+
+BONUS_OBJECTS = ${BONUS_SRCS:.c=.o}
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -51,12 +55,15 @@ all: ${NAME}
 $(NAME): $(OBJECTS)
 	ar -rc ${NAME} ${OBJECTS}
 
+bonus: ${OBJECTS} ${BONUS_OBJECTS}
+	ar -rc ${NAME} ${OBJECTS} ${BONUS_OBJECTS}
+
 clean:
-	/bin/rm -f $(OBJECTS)
+	/bin/rm -f $(OBJECTS) ${BONUS_OBJECTS}
 
 fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re .c.o
+.PHONY: all clean fclean re bonus .c.o
