@@ -6,7 +6,7 @@
 /*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 10:15:18 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/30 11:01:17 by jay              ###   ########.fr       */
+/*   Updated: 2023/09/30 12:26:49 by jay              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,5 @@ t_list  *ft_lstnew(void *content);
 void  ft_lstadd_front(t_list **lst, t_list *new);
 int ft_lstsize(t_list *lst);
 t_list  *ft_lstlast(t_list *lst);
-
+void  ft_lstadd_back(t_list **lst, t_list *new);
 #endif
