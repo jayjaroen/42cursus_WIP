@@ -6,7 +6,7 @@
 #    By: jay <jay@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 14:17:00 by jjaroens          #+#    #+#              #
-#    Updated: 2023/09/29 22:43:07 by jay              ###   ########.fr        #
+#    Updated: 2023/09/30 11:04:53 by jay              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRCS += ft_isalnum.c ft_isascii.c ft_isprint.c \
 BONUS_SRCS = ft_lstnew.c \
 						ft_lstadd_front.c \
 						ft_lstsize.c \
+						ft_lstlast.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
