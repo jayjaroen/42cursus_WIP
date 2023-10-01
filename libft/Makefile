@@ -6,7 +6,7 @@
 #    By: jay <jay@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 14:17:00 by jjaroens          #+#    #+#              #
-#    Updated: 2023/09/30 21:09:17 by jay              ###   ########.fr        #
+#    Updated: 2023/10/01 16:14:22 by jay              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,8 @@ BONUS_SRCS = ft_lstnew.c \
 						ft_lstadd_back.c \
 						ft_lstdelone.c \
 						ft_lstclear.c \
+						ft_lstiter.c \
+						# ft_lstmap.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
