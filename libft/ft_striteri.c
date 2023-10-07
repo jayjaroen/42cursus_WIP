@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 21:32:48 by jay               #+#    #+#             */
-/*   Updated: 2023/09/22 21:32:53 by jay              ###   ########.fr       */
+/*   Updated: 2023/10/07 16:36:09 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ Parameters: 1) the string on which to iterate
 			2) the function to apply to each character
 return: None
 */
-/*void	my_function(unsigned int i, char *c)
-{
-	if (i % 2 == 0)
-		*c = *c + 1;//next character?
-}*/
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;

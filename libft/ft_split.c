@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:14:11 by jay               #+#    #+#             */
-/*   Updated: 2023/10/06 23:04:36 by jay              ###   ########.fr       */
+/*   Updated: 2023/10/07 16:18:01 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ Parameters: 1) s = the string to be split; 2) c = the delimiter character
 Return: the array oof new strings resulting from the split
         NULL if the allocation fails.
 */
-static int	ft_check(char s, char c)
-{
-	return (s == c);
-}
-
 static size_t	ft_count_sub(char const *s, char c)
 {
 	size_t	count;
@@ -74,6 +69,19 @@ static char	*sub(char const *s, char c)
 	return (word);
 }
 
+static void	free_array(size_t i, char **str)
+{
+	size_t	j;
+
+	j = 0;
+	while (i > j)
+	{
+		free(*(str + j));
+		j++;
+	}
+	free(str);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**new;
@@ -81,22 +89,23 @@ char	**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	new = (char **)malloc(sizeof(char *) * (ft_count_sub (s, c) + 1));
+	new = (char **)ft_calloc(sizeof(char *), (ft_count_sub (s, c) + 1));
 	if (new == NULL)
 		return (NULL);
 	i = 0;
 	while (*s)
 	{
-		while (*s != '\0' && ft_check (*s, c))
+		while (*s != '\0' && *s == c)
 			s++;
 		if (*s != '\0')
 		{
 			*(new + i) = sub (s, c);
+			if (*(new + i) == NULL)
+				return (free_array (i, new), NULL);
 			i++;
 		}
-		while (*s != '\0' && ft_check (*s, c) == 0)
+		while (*s != '\0' && *s != c)
 			s++;
 	}
-	*(new + i) = 0;
 	return (new);
 }
