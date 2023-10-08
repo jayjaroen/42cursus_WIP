@@ -3,15 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 21:32:04 by jay               #+#    #+#             */
-/*   Updated: 2023/09/23 15:04:59 by jjaroens         ###   ########.fr       */
+/*   Created: 2023/10/08 12:15:44 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/10/08 17:10:09 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
+/*
+Description: The strcmp() and strncmp() functions lexicographically 
+		compare the null-terminated strings s1 and s2.
 
+     	The strncmp() function compares not more than n characters.  
+		Because strncmp() is designed for comparing strings rather than 
+		binary data, characters that appear after a `\0' character 
+		are not compared.
+
+The strcmp() and strncmp() functions return an integer greater than, 
+		equal to, or less than 0, according as the string s1 is greater 
+		than, equal to, or less than the string s2. 
+		The comparison is done using **unsigned characters**, 
+		so that `\200' is greater than `\0'.
+*/
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
@@ -27,3 +43,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
+// int	main(void)
+// {
+// 	printf("the result of strncmp: %d\n", strncmp("hello", "helz", 5));
+// 	printf("the result of my function: %d\n", ft_strncmp("hello", "helz", 5));
+// }

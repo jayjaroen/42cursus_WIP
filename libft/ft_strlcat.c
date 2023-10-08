@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 13:35:23 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/09/18 22:53:51 by jay              ###   ########.fr       */
+/*   Created: 2023/10/08 12:15:00 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/10/08 16:33:09 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 // Behavior: strlcat append string src to the end of dest.
 // Strlcat append at most dstsize - strlen(dst) - 1
 // Parameters: dst (src to be appended), src,
@@ -41,3 +42,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (ft_strlen(dst) + ft_strlen(&src[j]));
 }
+// int	main(void)
+// {
+// 	char	*src;
+// 	char	dst[20];
+// 	int		i;
+	
+// 	i = 0;
+// 	while (i < 3)
+// 	{
+// 		dst[i] = 'p';
+// 		i++;
+// 	}
+// 	src = "12345";
+// 	printf("%zu\n", ft_strlcat(dst, src, 20));
+// }

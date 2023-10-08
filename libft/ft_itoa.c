@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 21:46:46 by jay               #+#    #+#             */
-/*   Updated: 2023/09/20 21:46:49 by jay              ###   ########.fr       */
+/*   Created: 2023/10/08 12:08:28 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/10/08 12:08:42 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 // convert integer to string, need to take care of the negative sign
 static size_t	ft_numlen(long n)
 {

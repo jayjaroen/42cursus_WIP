@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 10:15:18 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/07 12:29:44 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/08 13:54:09 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
 # include <stdlib.h>
-# include <stddef.h>
 # include <unistd.h>
 
 typedef struct s_list
@@ -23,7 +21,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-/*--------------------------------Part 1------------------------------------*/
+/*--------------------------------Part 1 23------------------------------------*/
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -48,7 +46,7 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
-/*---------------------Part 2:Additional Function---------------------------*/
+/*---------------------Part 2:Additional Functions 11---------------------------*/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -61,7 +59,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-/*---------------------Part 3: Bonuse---------------------------*/
+/*---------------------Part 3: Bonus 10---------------------------*/
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

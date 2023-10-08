@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 13:09:38 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/07 16:33:29 by jjaroens         ###   ########.fr       */
+/*   Created: 2023/10/08 12:07:40 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/10/08 12:07:45 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

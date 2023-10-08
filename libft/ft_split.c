@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 23:14:11 by jay               #+#    #+#             */
-/*   Updated: 2023/10/07 16:18:01 by jjaroens         ###   ########.fr       */
+/*   Created: 2023/10/08 12:14:08 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/10/08 17:43:45 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	new = (char **)ft_calloc(sizeof(char *), (ft_count_sub (s, c) + 1));
+	new = (char **)ft_calloc((ft_count_sub (s, c) + 1), sizeof(char *));
 	if (new == NULL)
 		return (NULL);
 	i = 0;
@@ -99,9 +99,12 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s != '\0')
 		{
-			*(new + i) = sub (s, c);
+			*(new + i) = sub(s, c);
 			if (*(new + i) == NULL)
-				return (free_array (i, new), NULL);
+			{
+				free_array(i, new);
+				return (NULL);
+			}
 			i++;
 		}
 		while (*s != '\0' && *s != c)

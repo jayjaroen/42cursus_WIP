@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaroens <jjaroens@student.42.fr>          +#+  +:+       +#+         #
+#    By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/16 14:17:00 by jjaroens          #+#    #+#              #
-#    Updated: 2023/10/07 16:28:56 by jjaroens         ###   ########.fr        #
+#    Created: 2023/10/08 12:17:14 by jjaroens          #+#    #+#              #
+#    Updated: 2023/10/08 12:17:17 by jjaroens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

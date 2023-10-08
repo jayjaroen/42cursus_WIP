@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jay <jay@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 22:10:51 by jay               #+#    #+#             */
-/*   Updated: 2023/09/16 18:05:28 by jjaroens         ###   ########.fr       */
+/*   Created: 2023/10/08 12:12:29 by jjaroens          #+#    #+#             */
+/*   Updated: 2023/10/08 17:09:51 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdio.h>
 // description: memmove copies len bytes from string src to string dst. The two
 // strings may overlap; the copy is always done is a non-destructive manner
+// memmove return the original value of dst
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
@@ -37,18 +38,21 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*int main(void)
-{
-	char buffer[80];
-	char a[] = "hellodfdffdfd";
-
-	strcpy(buffer, "World");
-	ft_memmove(buffer, a, 79);
-	printf ("%s\n", buffer);
-	// overlapse test case
-	char buffer2[5];
-	char b[] = "whatwhatwhatwhatwhat";
-	ft_memmove(buffer2,b,4);
-	printf("%s\n", buffer2);
-	return (0);
-}*/
+// int main(void)
+// {
+// 	char	src[] = "1234567";
+// 	char	*dst;
+// 	char	*dst2;
+	
+// 	dst = src + 1;
+// 	dst2 = NULL;
+// 	printf("%p	%s\n", src, src);
+// 	printf("%p	%s\n", dst, dst);
+// 	/////// the case that both src and dest are NULL /////////////
+// 	printf("the result of memmove function: %s\n", memcpy(dst,src,1));
+// 	printf("%p	%s\n", src, src);
+// 	printf("the result of my function: %s\n", ft_memmove(,"dd",5));
+// 	printf("the result of memmove function: %s\n", memmove("","dd",5));
+// 	printf("the result of my function: %s\n", ft_memmove("","dd",5));
+// 	overlapse test case
+// }
