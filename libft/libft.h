@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 10:15:18 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 13:54:09 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/09 21:23:40 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-/*--------------------------------Part 1 23------------------------------------*/
+/*--------------------------------Part 1 ------------------------------------*/
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -46,7 +46,7 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
-/*---------------------Part 2:Additional Functions 11---------------------------*/
+/*---------------------Part 2:Additional Functions ---------------------------*/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);

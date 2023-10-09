@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:15:00 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 16:33:09 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/09 21:03:16 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // 	char	*src;
 // 	char	dst[20];
 // 	int		i;
-	
 // 	i = 0;
 // 	while (i < 3)
 // 	{

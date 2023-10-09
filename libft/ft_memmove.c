@@ -6,13 +6,13 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:12:29 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 17:09:51 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/09 20:40:52 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
+// #include <string.h>
+// #include <stdio.h>
 // description: memmove copies len bytes from string src to string dst. The two
 // strings may overlap; the copy is always done is a non-destructive manner
 // memmove return the original value of dst
@@ -43,7 +43,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	char	src[] = "1234567";
 // 	char	*dst;
 // 	char	*dst2;
-	
+
 // 	dst = src + 1;
 // 	dst2 = NULL;
 // 	printf("%p	%s\n", src, src);
