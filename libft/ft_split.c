@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:14:08 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/09 20:44:52 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/12 22:23:16 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,76 +39,58 @@ static size_t	ft_count_sub(char const *s, char c)
 	return (count);
 }
 
-static size_t	word_len(char const *s, char c)
+static void	free_array(char **str)
 {
 	size_t	i;
 
 	i = 0;
-	while (*(s + i) != '\0' && *(s + i) != c)
-		i++;
-	return (i);
-}
-
-static char	*sub(char const *s, char c)
-{
-	size_t	len;
-	size_t	i;
-	char	*word;
-
-	len = word_len(s, c);
-	word = (char *)malloc(sizeof(char) * (len + 1));
-	if (word == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	while (str[i] != NULL)
 	{
-		*(word + i) = *(s + i);
+		free(str[i]);
+		str[i] = NULL;
 		i++;
-	}
-	*(word + i) = '\0';
-	return (word);
-}
-
-static void	free_array(size_t i, char **str)
-{
-	size_t	j;
-
-	j = 0;
-	while (i > j)
-	{
-		free(*(str + j));
-		j++;
 	}
 	free(str);
+}
+
+static void	ft_allocate(char **new, char const *s, char c)
+{
+	size_t	len;
+	char	**tmp;
+
+	tmp = new;
+	while (*s != '\0')
+	{
+		len = 0;
+		while (*s != '\0' && *s == c)
+			s++;
+		while (*s != '\0' && *s != c)
+		{
+			s++;
+			len++;
+		}
+		if (len)
+		{
+			*new = (char *)malloc((sizeof(char)) * len + 1);
+			if (*new == NULL)
+			{
+				free_array(tmp);
+				return ;
+			}
+			ft_strlcpy(*(new++), s - len, len + 1);
+		}
+	}
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**new;
-	size_t	i;
 
 	if (s == NULL)
 		return (NULL);
-	new = (char **)ft_calloc((ft_count_sub (s, c) + 1), sizeof(char *));
+	new = (char **)ft_calloc(((ft_count_sub(s, c)) + 1), sizeof(char *));
 	if (new == NULL)
 		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		while (*s != '\0' && *s == c)
-			s++;
-		if (*s != '\0')
-		{
-			*(new + i) = sub(s, c);
-			if (*(new + i) == NULL)
-			{
-				free_array(i, new);
-				return (NULL);
-			}
-			i++;
-		}
-		while (*s != '\0' && *s != c)
-			s++;
-	}
+	ft_allocate(new, s, c);
 	return (new);
 }
