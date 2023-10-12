@@ -6,12 +6,18 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:12:19 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 12:12:22 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/12 23:08:06 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+Description: The memcpy() function copies n bytes from memory area src
+			to memory area dst.  If dst and src overlap, behavior is undefined.
+			Applications in which dst and src might overlap should use
+			memmove(3) instead.
+Return: The memcpy() function returns the original value of dst.
+*/
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*d;
@@ -33,9 +39,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 // int main(void)
 // {
 //   char source[] = "hello world";
-//   char dest[20];
+//   char dest[5];
 //   char source1[] = "hello world";
-//   char dest1[20];
+//   char dest1[5];
 
 //   memcpy(dest, source, sizeof(source));
 //   ft_memcpy(dest1, source1, sizeof(source1));
