@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:14:08 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/12 22:23:16 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:47:27 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,28 @@ static void	free_array(char **str)
 	while (str[i] != NULL)
 	{
 		free(str[i]);
-		str[i] = NULL;
 		i++;
 	}
 	free(str);
 }
 
-static void	ft_allocate(char **new, char const *s, char c)
+static char	*ft_current(char const *s, char c, size_t *len)
+{
+	size_t	i;
+
+	i = 0;
+	while (*s != '\0' && *s == c)
+		s++;
+	while (*s != '\0' && *s != c)
+	{
+		s++;
+		i++;
+	}
+	*len = i;
+	return ((char *)s);
+}
+
+static char	**ft_allocate(char **new, char const *s, char c)
 {
 	size_t	len;
 	char	**tmp;
@@ -62,24 +77,19 @@ static void	ft_allocate(char **new, char const *s, char c)
 	while (*s != '\0')
 	{
 		len = 0;
-		while (*s != '\0' && *s == c)
-			s++;
-		while (*s != '\0' && *s != c)
-		{
-			s++;
-			len++;
-		}
+		s = ft_current(s, c, &len);
 		if (len)
 		{
 			*new = (char *)malloc((sizeof(char)) * len + 1);
 			if (*new == NULL)
 			{
 				free_array(tmp);
-				return ;
+				return (NULL);
 			}
 			ft_strlcpy(*(new++), s - len, len + 1);
 		}
 	}
+	return (tmp);
 }
 
 char	**ft_split(char const *s, char c)
@@ -91,6 +101,5 @@ char	**ft_split(char const *s, char c)
 	new = (char **)ft_calloc(((ft_count_sub(s, c)) + 1), sizeof(char *));
 	if (new == NULL)
 		return (NULL);
-	ft_allocate(new, s, c);
-	return (new);
+	return (ft_allocate(new, s, c));
 }
