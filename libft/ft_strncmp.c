@@ -6,13 +6,11 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:15:44 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 17:10:09 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:26:57 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 /*
 Description: The strcmp() and strncmp() functions lexicographically 
 		compare the null-terminated strings s1 and s2.
@@ -28,11 +26,15 @@ The strcmp() and strncmp() functions return an integer greater than,
 		The comparison is done using **unsigned characters**, 
 		so that `\200' is greater than `\0'.
 */
+#include <stdio.h>
+#include <string.h>
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
+	size_t	x;
 
-	i = 1;
+	i = 0;
+	x = 0;
 	if (n == 0)
 		return (0);
 	while (*s1 == *s2 && *s1 && i < n)
@@ -40,11 +42,13 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s1++;
 		s2++;
 		i++;
+		x++;
 	}
+	printf("looping:%zu\n", x);
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
-// int	main(void)
-// {
-// 	printf("the result of strncmp: %d\n", strncmp("hello", "helz", 5));
-// 	printf("the result of my function: %d\n", ft_strncmp("hello", "helz", 5));
-// }
+int	main(void)
+{
+	printf("the result of strncmp: %d\n", strncmp("abcdfe", "abcdfe", 4));
+	printf("the result of my function: %d\n", ft_strncmp("abcdfe", "abcdfe", 4));
+}

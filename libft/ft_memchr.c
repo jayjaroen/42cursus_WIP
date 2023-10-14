@@ -6,12 +6,11 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:12:01 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 12:12:04 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:12:28 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
 Description: The memchr() function locates the first occurrence of c 
 			(converted to an unsigned char) in string s.

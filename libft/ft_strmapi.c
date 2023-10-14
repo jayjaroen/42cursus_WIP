@@ -6,12 +6,11 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:15:34 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 12:15:37 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:58:05 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /* 
 Description: Applies the function ’f’ to each character of the
 string ’s’, and passing its index as first argument
@@ -21,15 +20,16 @@ Parameters: 1) s: the string on which to iterate.
 			2) f: the function to apply to each character && its index
 Return value: The string created from the successive applications of ’f’.
 Returns NULL if the allocation fails.*/
-/*char	my_function(unsigned int i, char c)//upcase the odd character
-{
-	if ( i % 2 != 0)
-	{
-		if (c >= 99 && c <= 122)
-			return c - 32;
-	}
-	return (c);
-}*/
+// #include <stdio.h>
+// char	my_function(unsigned int i, char c)//upcase the odd character
+// {
+// 	if ( i % 2 != 0)
+// 	{
+// 		if (c >= 99 && c <= 122)
+// 			return c - 32;
+// 	}
+// 	return (c);
+// }
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
 	unsigned int	i;
@@ -49,12 +49,12 @@ char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*int	main(void)
-{
-	char	*s;
-	char	(*f)(unsigned int, char);
+// int	main(void)
+// {
+// 	char	*s;
+// 	char	(*f)(unsigned int, char);
 
-	f = my_function;
-	s = "helloworld";
-	printf("%s\n", ft_strmapi(s,f));
-}*/
+// 	f = my_function;
+// 	s = "helloworld";
+// 	printf("%s\n", ft_strmapi(s,f));
+// }

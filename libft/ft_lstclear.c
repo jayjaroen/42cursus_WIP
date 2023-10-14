@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:09:28 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 12:09:30 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:51:33 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*current;
 	t_list	*next_node;
 
-	if (!lst && !del)
+	if (!lst || !del)
 		return ;
 	current = *lst;
 	next_node = NULL;

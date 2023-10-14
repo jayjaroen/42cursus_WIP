@@ -6,12 +6,18 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:08:28 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 12:08:42 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/13 12:43:36 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// convert integer to string, need to take care of the negative sign
+/*
+convert integer to string, need to take care of the negative sign
+Description: Allocates (with malloc(3)) and returns a string representing 
+the integer received as an argument. Negative numbers must be handled.
+Return value: The string representing the integer. 
+NULL if the allocation fails.
+*/
 static size_t	ft_numlen(long n)
 {
 	size_t	count;

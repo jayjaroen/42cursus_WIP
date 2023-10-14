@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:16:20 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 12:16:24 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/14 13:09:06 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	s_len;
 
-	s_len = ft_strlen(s);
 	if (!s)
 		return (NULL);
+	s_len = ft_strlen(s);
 	if (len > s_len - start)
 		len = s_len - start;
 	if (start > s_len)

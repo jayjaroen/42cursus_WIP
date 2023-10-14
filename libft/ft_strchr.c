@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:14:22 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/09 21:08:20 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:40:18 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 // therefore if c is ‘\0’, the functions locate the terminating ‘\0’.
 // Return: The functions strchr() and strrchr() return a pointer to the
 // located character, or NULL if the character does not appear in the string.
+// #include <stdio.h>
+// #include <string.h>
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s != (char)c)
@@ -26,3 +28,8 @@ char	*ft_strchr(const char *s, int c)
 	else
 		return (NULL);
 }
+// int	main(void)
+// {
+// 	printf("the strchr function: %s\n", strchr(" dfdf ",' '));
+// 	printf("the my function: %s\n", ft_strchr(" dfdf",' '));
+// }

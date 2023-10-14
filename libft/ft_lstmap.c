@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:10:57 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/08 12:11:01 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:01:20 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Parameters: lst:  The address of a pointer to a node.
             the list.
             del:  The address of the function used to delete
             the content of a node if needed.
-
+			
 Return: The new list.
         NULL if the allocation fails.
 Allow to use mallc & free

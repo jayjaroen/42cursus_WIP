@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:12:19 by jjaroens          #+#    #+#             */
-/*   Updated: 2023/10/12 23:08:06 by jjaroens         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:12:54 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,32 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 }
 // int main(void)
 // {
-//   char source[] = "hello world";
-//   char dest[5];
-//   char source1[] = "hello world";
-//   char dest1[5];
+//   ///////////// overflow/////////////////
+// //   char source[] = "hello world";
+// //   char dest[] = "hahaha";
+// //   char source1[] = "hello world";
+// //   char dest1[] = "hahaha";
 
-//   memcpy(dest, source, sizeof(source));
-//   ft_memcpy(dest1, source1, sizeof(source1));
-//   printf("this is the result of memcpy: %s\n", dest);
-//   printf("this is the result from my function: %s\n", dest1);
-//   return (0);
+// //   memcpy(dest, source, sizeof(source));
+// //   ft_memcpy(dest1, source1, sizeof(source1));
+// //   printf("this is the result of memcpy: %s\n", dest);
+// //   printf("this is the result from my function: %s\n", dest1);
+// //   return (0);
+// ///////////////dst & src overlapse///////////
+// ///////////return bus error//////////////////
+// // char	*src;
+// // char	*dst;
+
+// // src = "hello";
+// // dst = src + 1;
+// // // memcpy(dst, src, 3);
+// // ft_memcpy(dst, src, 3);
+// // printf("The result: %s\n", dst);
+// ////////////////NULL////////////////
+// char	*src;
+// char	*dst;
+
+// // dst = "Hello";
+// memcpy(dst, src, 3);
+// printf("The result: %s\n", dst);
 // }
