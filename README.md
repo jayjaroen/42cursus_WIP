@@ -1,2 +1,4 @@
 # 42cursus_WIP
-Work in process
+First project - Libft
+Libft is a collection of functions that will be used in later projects. 
+
